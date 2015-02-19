@@ -10,7 +10,7 @@ get_header();
 <?php while ( have_posts() ) : the_post(); ?>
 
 	<?php 
-get_template_part( 'content', get_post_format() ); 
+//get_template_part( 'content', get_post_format() ); 
 $post = get_post(get_the_ID()); 
 ?>
 <article id="post-6" class="post-6 debate type-debate status-publish hentry">
@@ -44,7 +44,7 @@ echo 'vota b';
 }
 }
 ?>
-<div style="position:relative">
+<div style="position:relative; padding: 0 9%">
 <div style="padding: 10px; float: left; width: 45%;">
 <h3><?php echo get_post_meta( get_the_ID(), 'titlepa-text', true );?></h3>
 <p><br><?php echo get_post_meta( get_the_ID(), 'textpa-text', true );?></p>
@@ -70,8 +70,9 @@ echo $userb->user_login;
 </p>
 </div>
 
+<p>Duration:&nbsp;<?php echo get_post_meta( get_the_ID(), 'duration-select', true );?> days</p>
 </div>
-<p>Duration:&nbsp;<?php echo get_post_meta( get_the_ID(), 'duration-select', true );?></p>
+
 
 
 <?php comments_template( $file = plugin_path() . '/comments-debate.php', $separate_comments = false ); ?>

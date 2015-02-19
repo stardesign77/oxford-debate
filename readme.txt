@@ -44,10 +44,13 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
+= 0.5.2 =
+* Minor bug fixed
+
 = 0.5.1 =
 * Beta new version
 
 == Upgrade Notice ==
-* Beta new version
+* Minor bug fixed
 
 
