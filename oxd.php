@@ -6,7 +6,7 @@
  * Description: The online version of the Oxford-style debates adapte the physical model and makes it possible to expand 
  * the capabilities of both speakers and audience. The speakers may argue using web connectivity and multimedia, 
  * and the audience can also comment fixing its position on the proposals of the speakers or raising their own alternatives.
- * Version: 0.5.1
+ * Version: 0.5.2
  * Author: Rafa Fernandez
  * Author URI: http://cws-tech.com
  *
