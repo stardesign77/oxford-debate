@@ -16,42 +16,19 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			Comments
-			<?php
-			/*	printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'oxd' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );*/
-			?>
 		</h2>
 
 		<ol class="commentlist">
 			<?php
 				$arrcommA = array(
-				'post_id' => get_the_ID(),
-				'meta_key' => 'posture',
-				'meta_value' => 'a'
+				'post_id' => get_the_ID()
 				);
 				$comments = get_comments($arrcommA);
 			?>
-			<p>POSTURE A</p>
-			<?php
-			/*
-			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'oxd' ),
-                                        number_format_i18n( get_comments_number($arrcommA) ), '<span>' . get_the_title() . '</span>' );*/
-			?>
+			
+			
 			<?php wp_list_comments(); ?>
 
-
-
-
-			<?php
-				$arrcommB = array(
-				'post_id' => get_the_ID(),
-				'meta_key' => 'posture',
-				'meta_value' => 'B'
-				);
-				$comments = get_comments($arrcommB);
-			?>
-			<p>POSTURE B</p>
-        	<?php wp_list_comments(); ?>
 		
 		</ol><!-- .commentlist -->
 
@@ -90,6 +67,7 @@ if ( post_password_required() )
     	'<select name="posture"> ' .
    		'	<option value="a">A</option> ' .
   		'	<option value="b">B</option> ' .
+  		'	<option value="nothing">nothing</option> ' .
 		'</select> </p>' .
 		'<p>' .
         '<label for="comment">' . __( 'Let us know what you have to say:' ) . '</label>' .

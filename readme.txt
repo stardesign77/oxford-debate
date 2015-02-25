@@ -32,7 +32,7 @@ http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 
 = What is the shortcode to use ? =
 
-[debates_q].
+[debates_q order="ASC" orderby="title"].
 
 == Screenshots ==
 
@@ -43,6 +43,11 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 2. This is the second screen shot
 
 == Changelog ==
+= 0.6.0 =
+* New comments area
+* HTML bug fixed
+* Improved voting system
+* Minor bug fixed
 
 = 0.5.2 =
 * Minor bug fixed
