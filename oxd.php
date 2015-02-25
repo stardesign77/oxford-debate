@@ -6,7 +6,7 @@
  * Description: The online version of the Oxford-style debates adapte the physical model and makes it possible to expand 
  * the capabilities of both speakers and audience. The speakers may argue using web connectivity and multimedia, 
  * and the audience can also comment fixing its position on the proposals of the speakers or raising their own alternatives.
- * Version: 0.5.1
+ * Version: 0.6.0
  * Author: Rafa Fernandez
  * Author URI: http://cws-tech.com
  *
@@ -88,18 +88,14 @@ function oxddebate_listing_shortcode( $atts ) {
     $query = new WP_Query( array(
         'post_type' => 'debate',
         'posts_per_page' => -1,
-        'order' => 'ASC',
-        'orderby' => 'title',
+        'order' => $atts['order'],
+        'orderby' => $atts['orderby'],
     ) );
     if ( $query->have_posts() ) { ?>
-        <ul class="clothes-listing">
-            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-            <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            </li>
-            <?php endwhile;
-            wp_reset_postdata(); ?>
-        </ul>
+    	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+    		<?php get_template_part ('content', get_post_type()); ?>
+         <?php endwhile;
+         wp_reset_postdata(); ?>
     <?php $myvariable = ob_get_clean();
     return $myvariable;
     }

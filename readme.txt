@@ -17,7 +17,7 @@ According to Wikipedia, physical Oxford-Style debate is a competitive debate for
 The online version of the Oxford-style debates adapte the physical model and makes it possible to expand the capabilities of both speakers and audience. The speakers may argue using web connectivity and multimedia, and the audience can also comment fixing its position on the proposals of the speakers or raising their own alternatives.
 The plugin can be used independently or together with other services conferences, seminars or webinars.
 For more information see:
-http://oxfordstyledebate.com/
+
 http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 
 == Installation ==
@@ -32,7 +32,7 @@ http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 
 = What is the shortcode to use ? =
 
-[debates_q].
+[debates_q order="ASC" orderby="title"].
 
 == Screenshots ==
 
@@ -43,6 +43,11 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 2. This is the second screen shot
 
 == Changelog ==
+= 0.6.0 =
+* New comments area
+* HTML bug fixed
+* Improved voting system
+* Minor bug fixed
 
 = 0.5.2 =
 * Minor bug fixed
