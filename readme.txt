@@ -17,7 +17,7 @@ According to Wikipedia, physical Oxford-Style debate is a competitive debate for
 The online version of the Oxford-style debates adapte the physical model and makes it possible to expand the capabilities of both speakers and audience. The speakers may argue using web connectivity and multimedia, and the audience can also comment fixing its position on the proposals of the speakers or raising their own alternatives.
 The plugin can be used independently or together with other services conferences, seminars or webinars.
 For more information see:
-http://oxfordstyledebate.com/
+
 http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 
 == Installation ==
@@ -27,12 +27,13 @@ http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 3. Go to WP admin > Plugins > Add New
 4. Type Oxford Debate in search box and hit enter and install plugin from there
 5. Activate the plugin through the 'Plugins' menu of WordPress
+*. Bootstrap framework is needed in your theme
 
 == Frequently Asked Questions ==
 
 = What is the shortcode to use ? =
 
-[debates_q].
+[debates_q order="ASC" orderby="title"].
 
 == Screenshots ==
 
@@ -43,14 +44,20 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 2. This is the second screen shot
 
 == Changelog ==
+= 0.7.0 =
+* Added: Multilanguage compatibility
+
+= 0.6.0 =
+* Added: Comments area
+* Fixed: HTML bug
+* Added:Improved voting system
+* Fixed: Minor bug
 
 = 0.5.2 =
-* Minor bug fixed
+* Fixed: Minor bug
 
 = 0.5.1 =
 * Beta new version
 
 == Upgrade Notice ==
-* Minor bug fixed
-
-
+* Added: Multilanguage compatibility
