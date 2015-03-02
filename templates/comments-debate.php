@@ -15,7 +15,7 @@ if ( post_password_required() )
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
-			Comments
+			<?php _e('Comments','oxd'); ?>
 		</h2>
 
 		<ol class="commentlist">
@@ -35,8 +35,8 @@ if ( post_password_required() )
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">
 			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'oxd' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'oxd' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'oxd' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( _e( '&larr; Older Comments', 'oxd' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( _e( 'Newer Comments &rarr;', 'oxd' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
@@ -53,24 +53,24 @@ if ( post_password_required() )
 	<?php $comment_args = array( 'title_reply'=>'Got Something To Say:',
 
 	'fields' => apply_filters( 'comment_form_default_fields', array(
-	'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Your Good Name' ) . '</label> ' . ( $req ? '<span>*</span>' : '' ) .
+	'author' => '<p class="comment-form-author">' . '<label for="author">' . _e( 'Your Good Name', 'oxd' ) . '</label> ' . ( $req ? '<span>*</span>' : '' ) .
         '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></p>',   
     'email'  => '<p class="comment-form-email">' .
-                '<label for="email">' . __( 'Your Email Please' ) . '</label> ' .
+                '<label for="email">' . _e( 'Your Email Please', 'oxd' ) . '</label> ' .
                 ( $req ? '<span>*</span>' : '' ) .
                 '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" />'.'</p>',
     'url'    => '' ) ),
     'comment_field' => 
 		'<p>' . 
-		'<label for="posture">'. __('Posture') . '</label>' .
+		'<label for="posture">'. _e('Posture', 'oxd') . '</label>' .
     	'<span class="required">*</span>' .
     	'<select name="posture"> ' .
    		'	<option value="a">A</option> ' .
   		'	<option value="b">B</option> ' .
-  		'	<option value="nothing">nothing</option> ' .
+  		'	<option value="nothing">'. _e('Other', 'oxd') . '</option> ' .
 		'</select> </p>' .
 		'<p>' .
-        '<label for="comment">' . __( 'Let us know what you have to say:' ) . '</label>' .
+        '<label for="comment">' . _e( 'Let us know what you have to say:', 'oxd' ) . '</label>' .
         '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>' .
         '</p>',
     'comment_notes_after' => '',

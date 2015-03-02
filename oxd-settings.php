@@ -42,23 +42,23 @@ if (!class_exists("Oxd_Settings")) :
 	    ?>
 	 
 	    <p>
-	        <label for="titlepa-text" class="oxd-row-title"><?php _e( 'Title Posture A', 'oxd-textdomain' )?></label>
+	        <label for="titlepa-text" class="oxd-row-title"><?php _e( 'Title Posture A', 'oxd' )?></label>
 	        <input type="text" name="titlepa-text" id="titlepa-text" value="<?php if ( isset ( $prfx_stored_meta['titlepa-text'] ) ) echo $prfx_stored_meta['titlepa-text'][0]; ?>" />
 	    </p>
 	    <p>
-	        <label for="textpa-text" class="oxd-row-text"><?php _e( 'Text Posture A', 'oxd-textdomain' )?></label>
+	        <label for="textpa-text" class="oxd-row-text"><?php _e( 'Text Posture A', 'oxd' )?></label>
 	        <textarea name="textpa-text" id="textpa-text"><?php if ( isset ( $prfx_stored_meta['textpa-text'] ) ) echo $prfx_stored_meta['textpa-text'][0]; ?></textarea>
 	    </p>
 	    <p>
-	        <label for="titlepb-text" class="oxd-row-title"><?php _e( 'Title Posture B', 'oxd-textdomain' )?></label>
+	        <label for="titlepb-text" class="oxd-row-title"><?php _e( 'Title Posture B', 'oxd' )?></label>
 	        <input type="text" name="titlepb-text" id="titlepb-text" value="<?php if ( isset ( $prfx_stored_meta['titlepb-text'] ) ) echo $prfx_stored_meta['titlepb-text'][0]; ?>" />
 	    </p>
 	    <p>
-	        <label for="textpb-text" class="oxd-row-text"><?php _e( 'Text Posture B', 'oxd-textdomain' )?></label>
+	        <label for="textpb-text" class="oxd-row-text"><?php _e( 'Text Posture B', 'oxd' )?></label>
 	        <textarea name="textpb-text" id="textpb-text"><?php if ( isset ( $prfx_stored_meta['textpb-text'] ) ) echo $prfx_stored_meta['textpb-text'][0]; ?></textarea>
 	    </p>
 	    <p>
-	    	<label for="duration-select" class="oxd-row-select"><?php _e( 'Duration (days)', 'oxd-textdomain' )?></label>
+	    	<label for="duration-select" class="oxd-row-select"><?php _e( 'Duration (days)', 'oxd' )?></label>
 	        <input type="text" name="duration-select" id="duration-select" value="<?php if ( isset ( $prfx_stored_meta['duration-select'] ) ) echo $prfx_stored_meta['duration-select'][0]; ?>" />
 
 	    </p>
@@ -82,7 +82,8 @@ if (!class_exists("Oxd_Settings")) :
 		if (!empty($authors))
 		{
 		    // Name is your custom field key
-		    echo "Posture A user: <select name='usera'>";
+		    $txtpa =  _e( 'Posture A user:', 'oxd' );
+		    echo   $txtpa . "<select name='usera'>";
 		    // loop trough each author
 		    foreach ($authors as $author)
 		    {
@@ -96,7 +97,8 @@ if (!class_exists("Oxd_Settings")) :
 
 		    // USER B
 		    // Name is your custom field key
-		    echo "Posture B user: <select name='userb'>";
+		    $txtpb =  _e( 'Posture B user:', 'oxd' );
+		    echo $txtpb .  "<select name='userb'>";
 		    // loop trough each author
 		    foreach ($authors as $author)
 		    {
@@ -108,13 +110,13 @@ if (!class_exists("Oxd_Settings")) :
 		    }
 		    echo "</select>";
 		} else {
-		    echo 'No authors found';
+		    echo _e( 'No authors found', 'oxd' );
 		}
 		?>
 		<p>
-			<label for="votea" class="oxd-row-select"><?php _e( 'Votes A', 'oxd-textdomain' )?></label>
+			<label for="votea" class="oxd-row-select"><?php _e( 'Votes A', 'oxd' )?></label>
 	        <input type="text" name="votea" id="votea" value="<?php if ( isset ( $prfx_stored_meta['votea'] ) ) echo $prfx_stored_meta['votea'][0]; ?>" />
-	        <label for="voteb" class="oxd-row-select"><?php _e( 'Votes B', 'oxd-textdomain' )?></label>
+	        <label for="voteb" class="oxd-row-select"><?php _e( 'Votes B', 'oxd' )?></label>
 	        <input type="text" name="voteb" id="voteb" value="<?php if ( isset ( $prfx_stored_meta['voteb'] ) ) echo $prfx_stored_meta['voteb'][0]; ?>" />
 		</p>
 		<?php
