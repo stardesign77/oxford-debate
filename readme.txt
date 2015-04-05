@@ -35,6 +35,10 @@ http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 
 [debates_q order="ASC" orderby="title"].
 
+= What is the role for posture user ? =
+
+Author
+
 == Screenshots ==
 
 1. Debate Section oxd.png. Note that the screenshot is taken from
@@ -44,6 +48,9 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 2. This is the second screen shot
 
 == Changelog ==
+= 0.7.1 =
+* Fixed: Improvement in the editing area
+
 = 0.7.0 =
 * Added: Multilanguage compatibility
 

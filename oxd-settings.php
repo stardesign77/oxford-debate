@@ -40,85 +40,171 @@ if (!class_exists("Oxd_Settings")) :
 		wp_nonce_field( basename( __FILE__ ), 'oxd_nonce' );
 	    $prfx_stored_meta = get_post_meta( $post->ID );
 	    ?>
-	 
-	    <p>
-	        <label for="titlepa-text" class="oxd-row-title"><?php _e( 'Title Posture A', 'oxd' )?></label>
-	        <input type="text" name="titlepa-text" id="titlepa-text" value="<?php if ( isset ( $prfx_stored_meta['titlepa-text'] ) ) echo $prfx_stored_meta['titlepa-text'][0]; ?>" />
-	    </p>
-	    <p>
-	        <label for="textpa-text" class="oxd-row-text"><?php _e( 'Text Posture A', 'oxd' )?></label>
-	        <textarea name="textpa-text" id="textpa-text"><?php if ( isset ( $prfx_stored_meta['textpa-text'] ) ) echo $prfx_stored_meta['textpa-text'][0]; ?></textarea>
-	    </p>
-	    <p>
-	        <label for="titlepb-text" class="oxd-row-title"><?php _e( 'Title Posture B', 'oxd' )?></label>
-	        <input type="text" name="titlepb-text" id="titlepb-text" value="<?php if ( isset ( $prfx_stored_meta['titlepb-text'] ) ) echo $prfx_stored_meta['titlepb-text'][0]; ?>" />
-	    </p>
-	    <p>
-	        <label for="textpb-text" class="oxd-row-text"><?php _e( 'Text Posture B', 'oxd' )?></label>
-	        <textarea name="textpb-text" id="textpb-text"><?php if ( isset ( $prfx_stored_meta['textpb-text'] ) ) echo $prfx_stored_meta['textpb-text'][0]; ?></textarea>
-	    </p>
-	    <p>
-	    	<label for="duration-select" class="oxd-row-select"><?php _e( 'Duration (days)', 'oxd' )?></label>
-	        <input type="text" name="duration-select" id="duration-select" value="<?php if ( isset ( $prfx_stored_meta['duration-select'] ) ) echo $prfx_stored_meta['duration-select'][0]; ?>" />
 
-	    </p>
-	 
-	    <?php
-	    global $post;
-		$custom = get_post_custom($post->ID);
+	    <table class="form-table">
+		<tbody>
+			<tr valign="top">
+				<th scope="row">
+					<label for="titlepa-text"><?php _e( 'Title Posture A', 'oxd' )?></label>
+				</th>
+				<td>
+			        <input type="text" name="titlepa-text" id="titlepa-text" style="width: 80%;" value="<?php if ( isset ( $prfx_stored_meta['titlepa-text'] ) ) echo $prfx_stored_meta['titlepa-text'][0]; ?>" />
+					<p class="description"></p>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr valign="top">
+				<th scope="row">
+					<label for="textpa-text"><?php _e( 'Text Posture A', 'oxd' )?></label>
+				</th>
+				<td>
+			        <textarea name="textpa-text" id="textpa-text" style="width: 80%; height: 150px;"><?php if ( isset ( $prfx_stored_meta['textpa-text'] ) ) echo $prfx_stored_meta['textpa-text'][0]; ?></textarea>
+				<p class="description"></p>
+				</td>
+			</tr>
+			<tr>	
+			</tr>
+			<tr valign="top">
+				<th scope="row">
+					<label for="titlepb-text"><?php _e( 'Title Posture B', 'oxd' )?></label>
+				</th>
+				<td>
+					<input type="text" name="titlepb-text" id="titlepb-text" style="width: 80%;" value="<?php if ( isset ( $prfx_stored_meta['titlepb-text'] ) ) echo $prfx_stored_meta['titlepb-text'][0]; ?>" />
+				<p class="description"></p>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr valign="top">
+				<th scope="row">
+					<label for="textpb-text"><?php _e( 'Text Posture B', 'oxd' )?></label>
+				</th>
+				<td>
+	        		<textarea name="textpb-text" id="textpb-text" style="width: 80%; height: 150px;"><?php if ( isset ( $prfx_stored_meta['textpb-text'] ) ) echo $prfx_stored_meta['textpb-text'][0]; ?></textarea>
+				<p class="description"></p>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr valign="top">
+				<th scope="row">
+					<label for="duration-select"><?php _e( 'Duration (days)', 'oxd' )?></label>
+				</th>
+				<td>
+					<select name="duration-select">
+						<option value="1">1</option>
+						<option value="5">5</option>
+						<option value="7">7</option>
+						<option value="14">14</option>
+						<option value="30">30</option>
+						<option value="60">60</option>
+						<option value="90">90</option>
+					</select>
+					<p class="description"></p>
+				</td>
+			</tr>
+			<tr>
+			</tr>
 
-		// prepare arguments
-		$user_args  = array(
-		// search only for Authors role
-		'role' => 'Author',
-		// order results by display_name
-		'orderby' => 'display_name'
-		);
-		// Create the WP_User_Query object
-		$wp_user_query = new WP_User_Query($user_args);
-		// Get the results
-		$authors = $wp_user_query->get_results();
-		// Check for results
-		if (!empty($authors))
-		{
-		    // Name is your custom field key
-		    $txtpa =  _e( 'Posture A user:', 'oxd' );
-		    echo   $txtpa . "<select name='usera'>";
-		    // loop trough each author
-		    foreach ($authors as $author)
-		    {
-		        // get all the user's data
-		        $author_info = get_userdata($author->ID);
-		        $author_id = get_post_meta($post->ID, 'usera', true);
-		        if($author_id == $author_info->ID) { $author_selected = 'selected="selected"'; } else { $author_selected = ''; }
-		        echo '<option value='.$author_info->ID.' '.$author_selected.'>'.$author_info->first_name.' '.$author_info->last_name.'</option>';
-		    }
-		    echo "</select>";
+	    	<?php
+	    	global $post;
+			$custom = get_post_custom($post->ID);
 
-		    // USER B
-		    // Name is your custom field key
-		    $txtpb =  _e( 'Posture B user:', 'oxd' );
-		    echo $txtpb .  "<select name='userb'>";
-		    // loop trough each author
-		    foreach ($authors as $author)
-		    {
-		        // get all the user's data
-		        $author_info = get_userdata($author->ID);
-		        $author_id = get_post_meta($post->ID, 'userb', true);
-		        if($author_id == $author_info->ID) { $author_selected = 'selected="selected"'; } else { $author_selected = ''; }
-		        echo '<option value='.$author_info->ID.' '.$author_selected.'>'.$author_info->first_name.' '.$author_info->last_name.'</option>';
-		    }
-		    echo "</select>";
-		} else {
-		    echo _e( 'No authors found', 'oxd' );
-		}
-		?>
-		<p>
-			<label for="votea" class="oxd-row-select"><?php _e( 'Votes A', 'oxd' )?></label>
-	        <input type="text" name="votea" id="votea" value="<?php if ( isset ( $prfx_stored_meta['votea'] ) ) echo $prfx_stored_meta['votea'][0]; ?>" />
-	        <label for="voteb" class="oxd-row-select"><?php _e( 'Votes B', 'oxd' )?></label>
-	        <input type="text" name="voteb" id="voteb" value="<?php if ( isset ( $prfx_stored_meta['voteb'] ) ) echo $prfx_stored_meta['voteb'][0]; ?>" />
-		</p>
+			// prepare arguments
+			$user_args  = array(
+			// search only for Authors role
+			'role' => 'Author',
+			// order results by display_name
+			'orderby' => 'display_name'
+			);
+			// Create the WP_User_Query object
+			$wp_user_query = new WP_User_Query($user_args);
+			// Get the results
+			$authors = $wp_user_query->get_results();
+			// Check for results
+
+			if (!empty($authors))
+			{
+
+			?>
+
+			<tr valign="top">
+				<th scope="row">
+					<label for="duration-select"><?php _e( 'Posture A user:', 'oxd' )?></label>
+				</th>
+				<td>
+					<select name="usera">
+					<?php
+					// loop trough each author
+		    		foreach ($authors as $author)
+		    		{
+		        		// get all the user's data
+		        		$author_info = get_userdata($author->ID);
+		        		$author_id = get_post_meta($post->ID, 'usera', true);
+		        		if($author_id == $author_info->ID) { $author_selected = 'selected="selected"'; } else { $author_selected = ''; }
+		        		echo '<option value='.$author_info->ID.' '.$author_selected.'>'.$author_info->first_name.' '.$author_info->last_name.'</option>';
+		    		}
+		    		echo "</select>";
+		    		?>
+					<p class="description"></p>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+
+			<tr valign="top">
+				<th scope="row">
+					<label for="duration-select"><?php _e( 'Posture B user:', 'oxd' )?></label>
+				</th>
+				<td>
+					<select name="userb">
+					<?php
+					// loop trough each author
+		    		foreach ($authors as $author)
+		    		{
+		        		// get all the user's data
+		        		$author_info = get_userdata($author->ID);
+		        		$author_id = get_post_meta($post->ID, 'userb', true);
+		        		if($author_id == $author_info->ID) { $author_selected = 'selected="selected"'; } else { $author_selected = ''; }
+		        		echo '<option value='.$author_info->ID.' '.$author_selected.'>'.$author_info->first_name.' '.$author_info->last_name.'</option>';
+		    		}
+		    		echo "</select>";
+		    		?>
+					<p class="description"></p>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+
+		    <?php
+			} else {
+		    	echo _e( 'No authors found', 'oxd' );
+			}
+			?>
+			<tr valign="top">
+				<th scope="row">
+					<label for="votea"><?php _e( 'Votes A', 'oxd' )?></label>
+				</th>
+				<td>
+					<input type="text" name="votea" id="votea" value="<?php if ( isset ( $prfx_stored_meta['votea'] ) ) echo $prfx_stored_meta['votea'][0]; else echo "0"?>" />
+	        		<p class="description"></p>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+			<tr valign="top">
+				<th scope="row">
+					<label for="votea"><?php _e( 'Votes B', 'oxd' )?></label>
+				</th>
+				<td>
+					<input type="text" name="voteb" id="voteb" value="<?php if ( isset ( $prfx_stored_meta['voteb'] ) ) echo $prfx_stored_meta['voteb'][0]; else echo "0"?>" />
+				</td>
+			</tr>
+			<tr>
+			</tr>
+		</tbody>
+		</table>
 		<?php
 	}
 
