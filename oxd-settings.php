@@ -29,7 +29,7 @@ if (!class_exists("Oxd_Settings")) :
 		function register_admin_styles() {
 		
 			wp_enqueue_style( 'jquery-ui-datepicker', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css' );
-			wp_enqueue_style( 'wp-jquery-date-picker', plugins_url( '/oxd/css/admin.css' ) );	
+			//wp_enqueue_style( 'wp-jquery-date-picker', plugins_url( '/oxd/css/admin.css' ) );	
 			
 		}
 

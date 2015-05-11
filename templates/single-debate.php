@@ -1,4 +1,6 @@
-<?php wp_enqueue_style( 'oxford-bootstrap', plugins_url('css/bootstrap.min.css', __FILE__) ); ?>
+<?php 
+wp_enqueue_style( 'oxford-bootstrap', plugins_url( '/oxd/css/bootstrap.min.css' ) );	
+?>
 
 <?php
 if (isset($_REQUEST['vote'])){	

@@ -48,6 +48,9 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 2. This is the second screen shot
 
 == Changelog ==
+= 1.0.1 =
+* Fixed: single-debate.php bug
+
 = 1.0.0 =
 * Added: Init date and end date
 * Added: CSS Bootstrap dependencies
