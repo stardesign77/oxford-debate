@@ -27,7 +27,7 @@ http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 3. Go to WP admin > Plugins > Add New
 4. Type Oxford Debate in search box and hit enter and install plugin from there
 5. Activate the plugin through the 'Plugins' menu of WordPress
-*. Bootstrap framework is needed in your theme
+6. Bootstrap framework is needed in your theme
 
 == Frequently Asked Questions ==
 
@@ -48,16 +48,22 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 2. This is the second screen shot
 
 == Changelog ==
+= 1.0.0 =
+* Added: Init date and end date
+* Added: CSS Bootstrap dependencies
+* Fixed: Refactored source code
+* Fixed: Minor bug
+
 = 0.7.1 =
 * Fixed: Improvement in the editing area
 
 = 0.7.0 =
 * Added: Multilanguage compatibility
 
-= 0.6.0 =
+= 0.6.0 =p
 * Added: Comments area
 * Fixed: HTML bug
-* Added:Improved voting system
+* Added: Improved voting system
 * Fixed: Minor bug
 
 = 0.5.2 =

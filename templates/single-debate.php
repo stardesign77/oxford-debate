@@ -1,3 +1,5 @@
+<?php wp_enqueue_style( 'oxford-bootstrap', plugins_url('css/bootstrap.min.css', __FILE__) ); ?>
+
 <?php
 if (isset($_REQUEST['vote'])){	
 	$debateid = get_the_ID();
@@ -41,23 +43,23 @@ get_header();
 		<h2 style="display:none"><?php _e('Postures','oxd'); ?></h2>
 		<!-- title -->
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-xs-6">
 				<h3><?php echo get_post_meta( get_the_ID(), 'titlepa-text', true );?></h3>
 			</div>
-			<div class="col-md-6">
+			<div class="col-xs-6">
 				<h3><?php echo get_post_meta( get_the_ID(), 'titlepb-text', true );?></h3>
 			</div>
 		</div>
 		<!-- text -->
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-xs-6">
 				<p><?php echo get_post_meta( get_the_ID(), 'textpa-text', true );?></p>
 				<p><?php 
 				$usera = get_userdata(get_post_meta( get_the_ID(), 'usera', true ));
 				echo $usera->user_login;
 				?></p>
 			</div>
-			<div class="col-md-6">
+			<div class="col-xs-6">
 				<p><?php echo get_post_meta( get_the_ID(), 'textpb-text', true );?></p>
 				<p><?php 
 				$userb = get_userdata(get_post_meta( get_the_ID(), 'userb', true ));
@@ -67,18 +69,18 @@ get_header();
 		</div>
 		<!-- vote -->
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-xs-6">
 				<p><?php echo get_post_meta( get_the_ID(), 'votea', true );?>&nbsp;
 				<a href="?p=<?php the_ID(); ?>&vote=a"><?php _e('Vote A','oxd'); ?></a></p>
 			</div>
-			<div class="col-md-6">
+			<div class="col-xs-6">
 				<p><?php echo get_post_meta( get_the_ID(), 'voteb', true );?>&nbsp;
 				<a href="?p=<?php the_ID(); ?>&vote=b"><?php _e('Vote B','oxd'); ?></a></p>
 			</div>
 		</div>
 		<!-- dutation -->
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-xs-12">
 				<p><?php _e('Duration:','oxd'); ?>&nbsp;<?php echo get_post_meta( get_the_ID(), 'duration-select', true );?>&nbsp;<?php _e('days','oxd'); ?></p>
 			</div>
 		</div>
