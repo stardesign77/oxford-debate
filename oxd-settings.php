@@ -110,7 +110,7 @@ if (!class_exists("Oxd_Settings")) :
 					</th>
 					<td>
 						<input type="checkbox" id="duration-check" name="initduration-text" value="<?php if ( isset ( $prfx_stored_meta['duration-check'] ) ) echo $prfx_stored_meta['duration-check'][0]; ?>" />
-						<p class="description">XXXX</p>
+						<p class="description"></p>
 					</td>
 				</tr>
 				<tr>
