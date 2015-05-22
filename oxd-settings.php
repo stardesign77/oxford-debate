@@ -36,7 +36,7 @@ if (!class_exists("Oxd_Settings")) :
 		function register_admin_scripts() {
 		
 			wp_enqueue_script( 'jquery-ui-datepicker' );
-			wp_enqueue_script( 'wp-jquery-date-picker', plugins_url( '/oxd/js/admin.js' ) );
+			wp_enqueue_script( 'wp-jquery-date-picker', plugins_url( '/oxford-debate/js/admin.js' ) );
 			
 		} 
 			
@@ -106,7 +106,7 @@ if (!class_exists("Oxd_Settings")) :
 				</tr>
 				<tr valign="top">
 					<th scope="row">
-						<label for="duration-check"><?php _e( 'Init Duration (date)', 'oxd' )?></label>
+						<label for="duration-check"><?php _e( 'Permanet', 'oxd' )?></label>
 					</th>
 					<td>
 						<input type="checkbox" id="duration-check" name="initduration-text" value="<?php if ( isset ( $prfx_stored_meta['duration-check'] ) ) echo $prfx_stored_meta['duration-check'][0]; ?>" />
@@ -117,7 +117,7 @@ if (!class_exists("Oxd_Settings")) :
 				</tr>
 				<tr valign="top">
 					<th scope="row">
-						<label for="initduration-text"><?php _e( 'Init Duration (date)', 'oxd' )?></label>
+						<label for="initduration-text"><?php _e( 'Star Date (date format)', 'oxd' )?></label>
 					</th>
 					<td>
 						<input type="text" id="initduration-text" name="initduration-text" value="<?php if ( isset ( $prfx_stored_meta['initduration-text'] ) ) echo $prfx_stored_meta['initduration-text'][0]; ?>" />
@@ -129,7 +129,7 @@ if (!class_exists("Oxd_Settings")) :
 
 				<tr valign="top">
 					<th scope="row">
-						<label for="endduration-text"><?php _e( 'Init Duration (date)', 'oxd' )?></label>
+						<label for="endduration-text"><?php _e( 'End Date (date format)', 'oxd' )?></label>
 					</th>
 					<td>
 						<input type="text" id="endduration-text" name="endduration-text" value="<?php if ( isset ( $prfx_stored_meta['endduration-text'] ) ) echo $prfx_stored_meta['endduration-text'][0]; ?>" />

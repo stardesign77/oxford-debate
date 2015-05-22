@@ -1,5 +1,5 @@
 <?php 
-wp_register_style( 'oxd-bootstrap', plugins_url( '/oxd/css/bootstrap.min.css' ) );
+wp_register_style( 'oxd-bootstrap', plugins_url( '/oxford-debate/css/bootstrap.min.css' ) );
 wp_enqueue_style( 'oxd-bootstrap' );
 ?>
 

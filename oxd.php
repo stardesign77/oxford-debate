@@ -6,7 +6,7 @@
  * Description: The online version of the Oxford-style debates adapte the physical model and makes it possible to expand 
  * the capabilities of both speakers and audience. The speakers may argue using web connectivity and multimedia, 
  * and the audience can also comment fixing its position on the proposals of the speakers or raising their own alternatives.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Rafa Fernandez
  * Author URI: http://cws-tech.com
  * Text Domain: oxd
@@ -20,7 +20,7 @@ if (!function_exists('is_admin')) {
     exit();
 }
 
-define( 'OXD_VERSION', '1.0.2' );
+define( 'OXD_VERSION', '1.0.3' );
 define( 'OXD_DIR', plugin_dir_path( __FILE__ ) );
 
 if (!class_exists("Oxd")) :
@@ -108,6 +108,7 @@ class Oxd {
             );
 
             register_post_type( 'debate', $args );
+            flush_rewrite_rules();
             
     }
 
