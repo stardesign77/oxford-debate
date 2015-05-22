@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Oxford-Debate 0.7.0 \n"
+"Report-Msgid-Bugs-To: https://XXX"
+"POT-Creation-Date: 2015-03-01 16:40:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+
+#: templates/single-debate.php:41
+msgid "Postures"
+msgstr "Posturas"
+
+#: templates/single-debate.php:72
+msgid "Vote A"
+msgstr "Vota A"
+
+#: templates/single-debate.php:76
+msgid "Vote B"
+msgstr "Vota B"
+
+#: templates/single-debate.php:82
+msgid "Duration"
+msgstr "Duración"
+
+#: templates/single-debate.php:82
+msgid "days"
+msgstr "días"
+
+#: oxd-settings.php:45
+msgid "Title Posture A"
+msgstr "Título Postura A"
+
+#: oxd-settings.php:49
+msgid "Text Posture A"
+msgstr "Texto Postura A"
+
+#: oxd-settings.php:53
+msgid "Title Posture B"
+msgstr "Título Postura B"
+
+#: oxd-settings.php:57
+msgid "Text Posture B"
+msgstr "Texto Postura B"
+
+#: oxd-settings.php:61
+msgid "Duration (days)"
+msgstr "Duración (días)"
+
+#: oxd-settings.php:85
+msgid "Posture A user:"
+msgstr "Usuario Postura A"
+
+#: oxd-settings.php:100
+msgid "Posture B user:"
+msgstr "Usuario Postura B"
+
+#: oxd-settings.php:113
+msgid "No authors found"
+msgstr "Autores no encontrados"
+
+#: oxd-settings.php:117
+msgid "Votes A"
+msgstr "Votos A"
+
+#: oxd-settings.php:119
+msgid "Votes B"
+msgstr "Votos B"
+
+
+#: templates/comments-debate.php:18
+msgid "Comments"
+msgstr "Comentarios"
+
+#: templates/comments-debate.php:37
+msgid "Comment navigation"
+msgstr "Navegación de comentarios"
+
+#: templates/comments-debate.php:37
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarios Antiguos"
+
+#: templates/comments-debate.php:39
+msgid "Newer Comments &rarr;"
+msgstr "Nuevos Comentarios &rarr;"
+
+#: templates/comments-debate.php:48
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados"
+
+#: templates/comments-debate.php:56
+msgid "Your Good Name"
+msgstr "Tu nombre"
+
+#: templates/comments-debate.php:59
+msgid "Your Email Please"
+msgstr "Tu email"
+
+#: templates/comments-debate.php:65
+msgid "Posture"
+msgstr "Postura"
+
+#: templates/comments-debate.php:70
+msgid "Other"
+msgstr "Otra"
+
+#: templates/comments-debate.php:73
+msgid "Let us know what you have to say:"
+msgstr "¿Qué tiene que decir?"
