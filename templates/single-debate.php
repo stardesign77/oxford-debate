@@ -1,3 +1,27 @@
+<?php 
+wp_register_style( 'oxd-bootstrap', plugins_url( '/oxd/css/bootstrap.min.css' ) );
+wp_enqueue_style( 'oxd-bootstrap' );
+?>
+
+<?php
+if (isset($_REQUEST['vote'])){	
+	$debateid = get_the_ID();
+	if (array_key_exists('oxdvoted',$_COOKIE) && in_array($debateid, $_COOKIE['oxdvoted'])){
+		// already voted
+	}else{
+		if ($_REQUEST['vote']=='a'){
+			$vote=get_post_meta( $debateid, 'votea', true )+1;
+			update_post_meta( $debateid, "votea", $vote);
+		}
+		else if ($_REQUEST['vote']=='b'){
+			$vote=get_post_meta( $debateid, 'voteb', true )+1;
+			update_post_meta( $debateid, "voteb", $vote);
+		}
+		setcookie('oxdvoted[$debateid]',$debateid);
+	}
+
+}
+?>
 <?php
 /**
  * Template Name: Debate Page
@@ -8,71 +32,62 @@
 get_header();
 ?>
 <?php while ( have_posts() ) : the_post(); ?>
-
-	<?php 
-//get_template_part( 'content', get_post_format() ); 
-$post = get_post(get_the_ID()); 
-?>
-<article id="post-6" class="post-6 debate type-debate status-publish hentry">
-	<header class="entry-header">
-		<h1 class="entry-title"><?php echo $post->post_title; ?></h1>	</header>
+<?php $post = get_post(get_the_ID());?>
 
 
 
-	<div class="entry-content">
+<article id="post-<?php get_the_ID()?>" class="container">
+	<header>
+		<h1><?php echo $post->post_title; ?></h1>	
+	</header>
+	<p><?php echo $post->post_content;?></p>
 
-<p><?php echo $post->post_content;?></p>
-
-	</div><!-- .entry-content -->
-
-	
-
-
-
-<?php
-if (isset($_REQUEST['vote'])){
-
-if ($_REQUEST['vote']=='a'){
-$vote=get_post_meta( get_the_ID(), 'votea', true )+1;
-update_post_meta( get_the_ID(), "votea", $vote);
-echo 'vota a';
-}
-else if ($_REQUEST['vote']=='b'){
-$vote=get_post_meta( get_the_ID(), 'voteb', true )+1;
-update_post_meta( get_the_ID(), "voteb", $vote);
-echo 'vota b';
-}
-}
-?>
-<div style="position:relative; padding: 0 9%">
-<div style="padding: 10px; float: left; width: 45%;">
-<h3><?php echo get_post_meta( get_the_ID(), 'titlepa-text', true );?></h3>
-<p><br><?php echo get_post_meta( get_the_ID(), 'textpa-text', true );?></p>
-<p><br><?php 
-$usera = get_userdata(get_post_meta( get_the_ID(), 'usera', true ));
-echo $usera->user_login;
-?></p>
-<p><br><?php echo get_post_meta( get_the_ID(), 'votea', true );?>&nbsp;
-<a href="?p=<?php the_ID(); ?>&vote=a">Vote A</a>
-</p>
-</div>
-
-<div style="padding: 10px; float: right; width: 45%;">
-<h3><?php echo get_post_meta( get_the_ID(), 'titlepb-text', true );?></h3>
-<p><br><?php echo get_post_meta( get_the_ID(), 'textpb-text', true );?></p>
-<p><br><?php 
-$userb = get_userdata(get_post_meta( get_the_ID(), 'userb', true ));
-echo $userb->user_login;
-?></p>
-
-<p><br><?php echo get_post_meta( get_the_ID(), 'voteb', true );?>&nbsp;
-<a href="?p=<?php the_ID(); ?>&vote=b">Vote B</a>
-</p>
-</div>
-
-<p>Duration:&nbsp;<?php echo get_post_meta( get_the_ID(), 'duration-select', true );?> days</p>
-</div>
-
+	<section>
+		<h2 style="display:none"><?php _e('Postures','oxd'); ?></h2>
+		<!-- title -->
+		<div class="row">
+			<div class="col-xs-6">
+				<h3><?php echo get_post_meta( get_the_ID(), 'titlepa-text', true );?></h3>
+			</div>
+			<div class="col-xs-6">
+				<h3><?php echo get_post_meta( get_the_ID(), 'titlepb-text', true );?></h3>
+			</div>
+		</div>
+		<!-- text -->
+		<div class="row">
+			<div class="col-xs-6">
+				<p><?php echo get_post_meta( get_the_ID(), 'textpa-text', true );?></p>
+				<p><?php 
+				$usera = get_userdata(get_post_meta( get_the_ID(), 'usera', true ));
+				echo $usera->user_login;
+				?></p>
+			</div>
+			<div class="col-xs-6">
+				<p><?php echo get_post_meta( get_the_ID(), 'textpb-text', true );?></p>
+				<p><?php 
+				$userb = get_userdata(get_post_meta( get_the_ID(), 'userb', true ));
+				echo $userb->user_login;
+				?></p>
+			</div>
+		</div>
+		<!-- vote -->
+		<div class="row">
+			<div class="col-xs-6">
+				<p><?php echo get_post_meta( get_the_ID(), 'votea', true );?>&nbsp;
+				<a href="?p=<?php the_ID(); ?>&vote=a"><?php _e('Vote A','oxd'); ?></a></p>
+			</div>
+			<div class="col-xs-6">
+				<p><?php echo get_post_meta( get_the_ID(), 'voteb', true );?>&nbsp;
+				<a href="?p=<?php the_ID(); ?>&vote=b"><?php _e('Vote B','oxd'); ?></a></p>
+			</div>
+		</div>
+		<!-- dutation -->
+		<div class="row">
+			<div class="col-xs-12">
+				<p><?php _e('Duration:','oxd'); ?>&nbsp;<?php echo get_post_meta( get_the_ID(), 'duration-select', true );?>&nbsp;<?php _e('days','oxd'); ?></p>
+			</div>
+		</div>
+	</section>
 
 
 <?php comments_template( $file = plugin_path() . '/comments-debate.php', $separate_comments = false ); ?>
