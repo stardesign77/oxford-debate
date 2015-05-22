@@ -18,7 +18,11 @@ The online version of the Oxford-style debates adapte the physical model and mak
 The plugin can be used independently or together with other services conferences, seminars or webinars.
 For more information see:
 
-http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
+Google Group link: https://groups.google.com/forum/#!forum/oxford-style-debate
+Twitter profile: https://twitter.com/oxfdebate
+Docs & resources: http://t.co/bqsUVUAXFe
+Project updates: https://trello.com/b/RACV8Yy8/oxford-debate-wp-plugin
+
 
 == Installation ==
 
@@ -27,7 +31,6 @@ http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 3. Go to WP admin > Plugins > Add New
 4. Type Oxford Debate in search box and hit enter and install plugin from there
 5. Activate the plugin through the 'Plugins' menu of WordPress
-6. Bootstrap framework is needed in your theme
 
 == Frequently Asked Questions ==
 
@@ -37,7 +40,7 @@ http://en.wikipedia.org/wiki/Debate#Oxford-Style_debate
 
 = What is the role for posture user ? =
 
-Author
+All
 
 == Screenshots ==
 
@@ -48,6 +51,10 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 2. This is the second screen shot
 
 == Changelog ==
+= 1.0.2 =
+* Added: All user roles included
+* Fixed: Added Bootstrap framework into single-debate.php
+
 = 1.0.1 =
 * Fixed: single-debate.php bug
 
@@ -63,7 +70,7 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 = 0.7.0 =
 * Added: Multilanguage compatibility
 
-= 0.6.0 =p
+= 0.6.0 =
 * Added: Comments area
 * Fixed: HTML bug
 * Added: Improved voting system

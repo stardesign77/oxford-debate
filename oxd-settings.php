@@ -22,7 +22,7 @@ if (!class_exists("Oxd_Settings")) :
 			add_action( 'admin_print_styles', array($this,'register_admin_styles') );
 			add_action( 'admin_enqueue_scripts', array($this,'register_admin_scripts') );
 			add_action( 'save_post', array($this,'oxd_meta_save') );
-
+			
 		}
 	
 
@@ -146,7 +146,7 @@ if (!class_exists("Oxd_Settings")) :
 				// prepare arguments
 				$user_args  = array(
 				// search only for Authors role
-				'role' => 'Author',
+				//'role' => 'Author',
 				// order results by display_name
 				'orderby' => 'display_name'
 				);
@@ -175,7 +175,7 @@ if (!class_exists("Oxd_Settings")) :
 			        		$author_info = get_userdata($author->ID);
 			        		$author_id = get_post_meta($post->ID, 'usera', true);
 			        		if($author_id == $author_info->ID) { $author_selected = 'selected="selected"'; } else { $author_selected = ''; }
-			        		echo '<option value='.$author_info->ID.' '.$author_selected.'>'.$author_info->first_name.' '.$author_info->last_name.'</option>';
+			        		echo '<option value='.$author_info->ID.' '.$author_selected.'>('.$author_info->nickname.') '.$author_info->first_name.' '.$author_info->last_name.'</option>';
 			    		}
 			    		echo "</select>";
 			    		?>
@@ -199,7 +199,7 @@ if (!class_exists("Oxd_Settings")) :
 			        		$author_info = get_userdata($author->ID);
 			        		$author_id = get_post_meta($post->ID, 'userb', true);
 			        		if($author_id == $author_info->ID) { $author_selected = 'selected="selected"'; } else { $author_selected = ''; }
-			        		echo '<option value='.$author_info->ID.' '.$author_selected.'>'.$author_info->first_name.' '.$author_info->last_name.'</option>';
+			        		echo '<option value='.$author_info->ID.' '.$author_selected.'>('.$author_info->nickname.') '.$author_info->first_name.' '.$author_info->last_name.'</option>';
 			    		}
 			    		echo "</select>";
 			    		?>
