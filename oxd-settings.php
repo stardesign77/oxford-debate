@@ -106,7 +106,7 @@ if (!class_exists("Oxd_Settings")) :
 				</tr>
 				<tr valign="top">
 					<th scope="row">
-						<label for="duration-check"><?php _e( 'Permanet', 'oxd' )?></label>
+						<label for="duration-check"><?php _e( 'Permanent', 'oxd' )?></label>
 					</th>
 					<td>
 						<input type="checkbox" id="duration-check" name="initduration-text" value="<?php if ( isset ( $prfx_stored_meta['duration-check'] ) ) echo $prfx_stored_meta['duration-check'][0]; ?>" />
@@ -117,7 +117,7 @@ if (!class_exists("Oxd_Settings")) :
 				</tr>
 				<tr valign="top">
 					<th scope="row">
-						<label for="initduration-text"><?php _e( 'Star Date (date format)', 'oxd' )?></label>
+						<label for="initduration-text"><?php _e( 'Start Date (date format)', 'oxd' )?></label>
 					</th>
 					<td>
 						<input type="text" id="initduration-text" name="initduration-text" value="<?php if ( isset ( $prfx_stored_meta['initduration-text'] ) ) echo $prfx_stored_meta['initduration-text'][0]; ?>" />
